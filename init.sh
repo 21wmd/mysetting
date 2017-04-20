@@ -2,7 +2,7 @@
 
 # 部署坚果云
 
-sudo apt-get install sudo apt-get install glib2.0-dev gtk2.0-dev libnautilus-extension-dev gvfs-bin openjdk-8-jre-headless
+sudo apt-get install sudo apt-get install glib2.0-dev gtk2.0-dev libnautilus-extension-dev gvfs-bin openjdk-8-jre-headless -y
 
 wget http://www.jianguoyun.com/static/exe/installer/nutstore_linux_src_installer.tar.gz
 
@@ -13,10 +13,14 @@ make
 sudo make install
 ./runtime_bootstrap
 
+# 部署oh-my-zsh
+sudo apt-get install zsh -y
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
 
 # 部署 PowerLine
 
-sudo apt-get install libxrandr-dev libxrandr2 python-psutil git python3-psutil python-hglib python3-hglib python-pygit2 python3-pygit2 python-bzrlib bzr libuv1-dev python-pip
+sudo apt-get install -y libxrandr-dev libxrandr2 python-psutil git python3-psutil python-hglib python3-hglib python-pygit2 python3-pygit2 python-bzrlib bzr libuv1-dev python-pip
 
 sudo pip install --upgrade pip
 pip install pyuv i3ipc xrandr powerline-status
